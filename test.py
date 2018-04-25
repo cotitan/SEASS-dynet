@@ -17,12 +17,12 @@ def main():
     parser.add_argument('--n_test', type=int, default=189651, help='Number of test examples [default: 189651]')
     parser.add_argument('--beam_size', type=int, default=5, help='Beam size [default: 5]')
     parser.add_argument('--max_len', type=int, default=100, help='Maximum length of decoding [default: 100]')
-    parser.add_argument('--model_file', type=str, default='./model_e1', help='Trained model file path [default: ./model_e1]')
-    parser.add_argument('--input_file', type=str, default='./data/valid.article.filter.txt', help='Test file path [default: ./data/valid.article.filter.txt]')
+    parser.add_argument('--model_file', type=str, default='./pretrained/pretrained_model', help='Trained model file path [default: ./model_e1]')
+    parser.add_argument('--input_file', type=str, default='./data/valid.article.top100.txt', help='Test file path [default: ./data/valid.article.filter.txt]')
     parser.add_argument('--output_file', type=str, default='./pred_y.txt', help='Output file path [default: ./pred_y.txt]')
-    parser.add_argument('--w2i_file', type=str, default='./w2i.dump', help='Word2Index file path [default: ./w2i.dump]')
-    parser.add_argument('--i2w_file', type=str, default='./i2w.dump', help='Index2Word file path [default: ./i2w.dump]')
-    parser.add_argument('--alloc_mem', type=int, default=1024, help='Amount of memory to allocate [mb] [default: 1024]')
+    parser.add_argument('--w2i_file', type=str, default='./pretrained/w2i.dump', help='Word2Index file path [default: ./w2i.dump]')
+    parser.add_argument('--i2w_file', type=str, default='./pretrained/i2w.dump', help='Index2Word file path [default: ./i2w.dump]')
+    parser.add_argument('--alloc_mem', type=int, default=4096, help='Amount of memory to allocate [mb] [default: 1024]')
     args = parser.parse_args()
 
     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
